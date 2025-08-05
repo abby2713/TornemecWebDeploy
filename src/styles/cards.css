@@ -1,0 +1,227 @@
+.card {
+  width: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #edeced;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  font-family: Arial, sans-serif;
+  margin: 8px;
+  padding: 8px 8px 0 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Usamos Flexbox para colocar los elementos en fila */
+  flex-direction: column; /* Organiza los elementos de arriba hacia abajo */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al hacer hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+
+.details {
+  padding: 5px 8px;
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.description {
+  color: #000;
+}
+
+.price {
+  color: red;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #00c853;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button {
+  width: 100%;
+  padding: 8px 0;
+  margin-bottom: 5px;
+  background-color: #D7383B;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #289c45; /* Cambia el color al hacer hover */
+}
+
+
+/* Nueva clase para alinear el QR y los detalles en la misma fila */
+.qr-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espacia el QR y el botón */
+}
+
+.product-data {
+  display: flex;
+  flex-direction: column; /* Alinea QR y botón en columna */
+  justify-content: center;
+  align-items: center;
+  flex: 1; /* Deja espacio suficiente para el QR y el botón */
+  padding: 8px;
+}
+.row {
+  
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15;
+}
+.assign-button {
+  background-color: #1E88E5; /* Azul */
+}
+
+.assign-button:hover {
+  background-color: #1565C0; /* Azul más oscuro al pasar el mouse */
+}
+/* Editar - Amarillo */
+.edit-button {
+  background-color: #ff9800; /* naranja */
+}
+.edit-button:hover {
+  background-color: #f9a825;
+}
+
+/* Eliminar - Rojo */
+.delete-button {
+  background-color: #e53935;
+}
+.delete-button:hover {
+  background-color: #c62828;
+}
+
+/* Asignar - Azul */
+.assign-button {
+  background-color: #2196f3; /* azul */
+}
+.assign-button:hover {
+  background-color: #1565c0;
+}
+/* Descargar QR - Verde */
+.qr-button {
+  background-color: #0D47A1;
+  position: relative;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.qr-button:hover {
+  background-color: #1565C0;
+  transform: scale(1.03);
+}
+
+.form-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+.add-button {
+  background-color: #4caf50; /* verde */
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pagination button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #135ba1;
+}
+
+.pagination button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #135ba1;
+}
+
+.pagination button:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background-color: #0d47a1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+

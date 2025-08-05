@@ -1,0 +1,257 @@
+/* Contenedor principal */
+.create-item-container {
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+    max-width: 800px; /* Límite máximo para pantallas grandes */
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 25px;
+    border: 1px solid #da3c3c;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Título del formulario */
+.form-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #da3c3c;
+}
+
+/* Estilos del formulario */
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 20px; /* Espacio entre columnas y filas */
+}
+
+/* Grupo de cada input */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Etiquetas */
+.form-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs */
+.form-input,
+.form-textarea {
+    width: 95%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #da3c3c;
+    box-shadow: 0 0 4px rgba(218, 60, 60, 0.5);
+}
+
+/* Textarea (ocupa ambas columnas) */
+.form-textarea {
+    height: 100px;
+    resize: vertical;
+    grid-column: span 2; /* Se expande en ambas columnas */
+}
+
+/* Inputs de dimensiones */
+.dimension-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dimension-input {
+    flex: 1;
+    min-width: 0;
+}
+
+.dimension-separator {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Botones (ocupan toda la fila) */
+.form-buttons {
+    grid-column: span 2; /* Se expanden en ambas columnas */
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.form-button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-button-primary {
+    background-color: #da3c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+
+.form-button-primary:hover {
+    background-color: #b13232;
+    box-shadow: 0 2px 6px rgba(218, 60, 60, 0.3);
+}
+
+.form-button-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.form-button-secondary:hover {
+    background-color: #d6d6d6;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del select */
+.form-select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    appearance: none; /* Oculta la flecha predeterminada del navegador */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.form-select:focus {
+    border-color: #da3c3c;
+    box-shadow: 0 0 4px rgba(218, 60, 60, 0.5);
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Contenedor de previsualización de imágenes */
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    grid-column: span 2; /* Ocupa ambas columnas en el formulario */
+}
+
+/* Cada item de previsualización de imagen */
+.image-preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+}
+
+/* Imagen dentro del item */
+.image-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Botón para eliminar la imagen */
+.remove-image-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #da3c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-image-button:hover {
+    background-color: #b13232;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.machine-image {
+    width: 180px; /* Ajusta según tu preferencia */
+    height: 180px; /* Mantén la proporción */
+    object-fit: cover; /* Recorta la imagen para llenar el cuadro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+    transition: transform 0.3s ease-in-out;
+}
+
+.machine-image:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+.image-counter {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
