@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:4000";
+const API_BASE_URL = "https://v14m7300-4000.brs.devtunnels.ms";
 
 async function handleRequest(endpoint, options = {}) {
   const url = `${API_BASE_URL}/${endpoint}`;
@@ -73,7 +73,7 @@ export const updateUser = (id, data) => {
 };
 
 export const getUserById = async (id) => {
-  const res = await fetch(`http://localhost:4000/users/${id}`);
+  const res = await fetch(`https://v14m7300-4000.brs.devtunnels.ms/users/${id}`);
   if (!res.ok) {
     throw new Error("No se pudo obtener el usuario");
   }
@@ -153,7 +153,7 @@ export const getUserInvestmentReport = async ({ userId, month, year, mode }) => 
   if (year) params.append('year', year);
   if (mode) params.append('mode', mode); // ✅
 
-  const res = await fetch(`http://localhost:4000/api/transactions/report?${params.toString()}`);
+  const res = await fetch(`https://v14m7300-4000.brs.devtunnels.ms/api/transactions/report?${params.toString()}`);
   if (!res.ok) throw new Error('Error al obtener datos');
   return res.json();
 };
@@ -161,7 +161,7 @@ export const getUserInvestmentReport = async ({ userId, month, year, mode }) => 
 
 
 export const getItemMovementReport = async (itemId) => {
-  const res = await fetch(`http://localhost:4000/api/transactions/report/item-movements?itemId=${itemId}`);
+  const res = await fetch(`https://v14m7300-4000.brs.devtunnels.ms/api/transactions/report/item-movements?itemId=${itemId}`);
   if (!res.ok) {
     throw new Error("No se pudo obtener el reporte de movimientos del ítem");
   }
@@ -187,13 +187,13 @@ export const getUserDetailedTransactionReport = async ({ userId, month, year, co
 
 
 export const getAllItemTransactions = async () => {
-  const res = await fetch("http://localhost:4000/api/transactions/report/all-transactions");
+  const res = await fetch("https://v14m7300-4000.brs.devtunnels.ms/api/transactions/report/all-transactions");
   if (!res.ok) throw new Error("Error al obtener las transacciones");
   return res.json();
 };
 export const getAllTransactionsReport = async (paramsObj = {}) => {
   const params = new URLSearchParams(paramsObj).toString();
-  const res = await fetch(`http://localhost:4000/api/transactions/report/all-transactions?${params}`);
+  const res = await fetch(`https://v14m7300-4000.brs.devtunnels.ms/api/transactions/report/all-transactions?${params}`);
   if (!res.ok) {
     throw new Error("No se pudo obtener el reporte completo");
   }
@@ -208,7 +208,7 @@ export const getItemAssignmentsReport = async (codigoitem, year, month, userid,b
   if (userid) params.append('userid', userid); // ✅ Filtro adicional
   if (branchId) params.append("branchId", branchId);
 
-  const url = `http://localhost:4000/api/reportes/asignaciones/${codigoitem}?${params.toString()}`;
+  const url = `https://v14m7300-4000.brs.devtunnels.ms/api/reportes/asignaciones/${codigoitem}?${params.toString()}`;
 
   const res = await fetch(url);
 

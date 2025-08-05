@@ -9,7 +9,7 @@ export default function ItemAsing({ item, onClose, onItemAssigned }) {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await fetch("http://localhost:4000/activos");
+        const response = await fetch("https://v14m7300-4000.brs.devtunnels.ms/activos");
         const data = await response.json();
         setUsuarios(data);
       } catch (error) {
@@ -48,7 +48,7 @@ export default function ItemAsing({ item, onClose, onItemAssigned }) {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/api/transactions/assign", {
+      const response = await fetch("https://v14m7300-4000.brs.devtunnels.ms/api/transactions/assign", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -76,7 +76,7 @@ export default function ItemAsing({ item, onClose, onItemAssigned }) {
       {/* Info del ítem */}
       <div style={{ display: "flex", gap: "15px", marginBottom: "15px" }}>
         <img
-          src={`http://localhost:4000${item.imageurl}`}
+          src={`https://v14m7300-4000.brs.devtunnels.ms${item.imageurl}`}
           alt={item.name}
           style={{ width: "100px", borderRadius: "8px" }}
         />

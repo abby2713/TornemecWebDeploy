@@ -18,7 +18,7 @@ const MachineCard = ({ machine, onDetail, onEdit, onDelete }) => {
   return (
     <div className={'card'}>
       <div className={'imageContainer'}>
-        <img src={`http://localhost:4000${machine.imageurl}`} alt="Maquina" width="300" />
+        <img src={`https://v14m7300-4000.brs.devtunnels.ms${machine.imageurl}`} alt="Maquina" width="300" />
       </div>
       <div className={'details'}>
         <h3 className={'title'}>{name}</h3>

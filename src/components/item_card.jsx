@@ -27,7 +27,7 @@ const ItemCard = ({ item, onEdit, onDelete, onAssign, onAdd, onReport }) => {
     return (
         <div className="card">
             <div className="imageContainer">
-                <img src={`http://localhost:4000${imageurl}`} alt={name} className="item-image" />
+                <img src={`https://v14m7300-4000.brs.devtunnels.ms${imageurl}`} alt={name} className="item-image" />
             </div>
 
             <div className="details">

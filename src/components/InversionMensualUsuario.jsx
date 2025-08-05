@@ -39,8 +39,8 @@ const ReportCard = () => {
     const params = buildParams();
     const baseUrl =
       view === 'detalle'
-        ? 'http://localhost:4000/api/transactions/download-user-detailed'
-        : 'http://localhost:4000/api/transactions/download-report';
+        ? 'https://v14m7300-4000.brs.devtunnels.ms/api/transactions/download-user-detailed'
+        : 'https://v14m7300-4000.brs.devtunnels.ms/api/transactions/download-report';
 
     if (!filters.userId) {
       alert("Debes ingresar un ID de usuario para descargar el detalle.");

@@ -8,7 +8,7 @@ const UserCard = ({ user, onEdit, onDelete }) => {
     return (
         <div className={'card'}>
             <div className={'imageContainer'}>
-                <img src={`http://localhost:4000${image}`} alt="Usuario" width="300" />
+                <img src={`https://v14m7300-4000.brs.devtunnels.ms${image}`} alt="Usuario" width="300" />
             </div>
             <div className={'details'}>
                 <h3 className={'title'}>{name + " " + lastname}</h3>

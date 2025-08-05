@@ -39,11 +39,11 @@ export default function UserEdit({ userId, onClose, onUserUpdated }) {
       }));
 
       if (user.image) {
-        setExistingImages([{ url: `http://localhost:4000${user.image}`, id: user.image }]);
+        setExistingImages([{ url: `https://v14m7300-4000.brs.devtunnels.ms${user.image}`, id: user.image }]);
       } else if (Array.isArray(user.images)) {
         setExistingImages(
           user.images.map(imgUrl => ({
-            url: `http://localhost:4000${imgUrl}`,
+            url: `https://v14m7300-4000.brs.devtunnels.ms${imgUrl}`,
             id: imgUrl
           }))
         );

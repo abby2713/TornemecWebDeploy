@@ -221,7 +221,7 @@ export default function ItemUpdateModal({ itemId, onClose, onItemUpdated }) {
                     <div className="image-preview-container">
                         {existingImages.map((url) => (
                             <div key={url} className="image-preview-item">
-                                <img src={`http://localhost:4000${url}`} alt="img" className="preview-img" width="100" />
+                                <img src={`https://v14m7300-4000.brs.devtunnels.ms${url}`} alt="img" className="preview-img" width="100" />
                                 <button type="button" className="remove-image-button" onClick={() => handleDeleteImage(url)}>X</button>
                             </div>
                         ))}

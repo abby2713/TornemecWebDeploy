@@ -162,7 +162,7 @@ export default function MachineUpdateModal({ machineId, onClose, onMachineUpdate
                     <div className="image-preview-container">
                         {existingImages.map((url) => (
                             <div key={url} className="image-preview-item">
-                                <img src={`http://localhost:4000${url}`}
+                                <img src={`https://v14m7300-4000.brs.devtunnels.ms${url}`}
                                     alt="img"
                                     className="preview-img"
                                     width='100' />

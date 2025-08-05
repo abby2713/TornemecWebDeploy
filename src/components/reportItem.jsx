@@ -49,7 +49,7 @@ const ReportItem = () => {
         return;
       }
 
-      baseUrl = `http://localhost:4000/api/reportes/asignaciones-excel/${filters.codigoitem}`;
+      baseUrl = `https://v14m7300-4000.brs.devtunnels.ms/api/reportes/asignaciones-excel/${filters.codigoitem}`;
       if (filters.year) params.append('year', filters.year);
       if (filters.month) params.append('month', filters.month);
       if (filters.userId) params.append('userid', filters.userId);
@@ -61,7 +61,7 @@ const ReportItem = () => {
         return;
       }
 
-      baseUrl = 'http://localhost:4000/api/transactions/download-user-detailed';
+      baseUrl = 'https://v14m7300-4000.brs.devtunnels.ms/api/transactions/download-user-detailed';
       params.append('userId', filters.userId);
       if (filters.month) params.append('month', filters.month);
       if (filters.year) params.append('year', filters.year);
@@ -69,7 +69,7 @@ const ReportItem = () => {
       if (filters.branchId) params.append('branchId', filters.branchId); // 🆕 agregado
 
     } else if (view === 'completo') {
-      baseUrl = 'http://localhost:4000/api/transactions/download-all-transactions';
+      baseUrl = 'https://v14m7300-4000.brs.devtunnels.ms/api/transactions/download-all-transactions';
       if (filters.userId) params.append('userId', filters.userId);
       if (filters.month) params.append('month', filters.month);
       if (filters.year) params.append('year', filters.year);
@@ -78,7 +78,7 @@ const ReportItem = () => {
       if (filters.branchId) params.append('branchId', filters.branchId); // 🆕 agregado
 
     } else {
-      baseUrl = 'http://localhost:4000/api/transactions/download-report';
+      baseUrl = 'https://v14m7300-4000.brs.devtunnels.ms/api/transactions/download-report';
       const queryParams = buildParams();
       queryParams.forEach((value, key) => params.append(key, value));
     }
@@ -150,7 +150,7 @@ const ReportItem = () => {
   useEffect(() => {
     const fetchBranches = async () => {
       try {
-        const res = await fetch("http://localhost:4000/branches"); // Ajusta el endpoint si es diferente
+        const res = await fetch("https://v14m7300-4000.brs.devtunnels.ms/branches"); // Ajusta el endpoint si es diferente
         const data = await res.json();
         setBranches(data);
       } catch (error) {
@@ -353,7 +353,7 @@ const ReportItem = () => {
                       <td>{row.mes || "Sin mes"}</td>
                       <td>
                         {row.imagen_url ? (
-                          <img src={`http://localhost:4000${row.imagen_url}`} alt="img" width={50} />
+                          <img src={`https://v14m7300-4000.brs.devtunnels.ms${row.imagen_url}`} alt="img" width={50} />
                         ) : (
                           <span>Sin imagen</span>
                         )}

@@ -14,7 +14,7 @@ export default function ItemAdd({ item, onClose, onItemUpdated }) {
   useEffect(() => {
     const fetchMovimientos = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/movements/${item.id}`);
+        const response = await fetch(`https://v14m7300-4000.brs.devtunnels.ms/movements/${item.id}`);
         const data = await response.json();
         const entradas = data.filter(mov => mov.movementtype === "entrada");
         setMovimientos(entradas);
@@ -50,7 +50,7 @@ export default function ItemAdd({ item, onClose, onItemUpdated }) {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/api/transactions/entry", {
+      const response = await fetch("https://v14m7300-4000.brs.devtunnels.ms/api/transactions/entry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -86,7 +86,7 @@ export default function ItemAdd({ item, onClose, onItemUpdated }) {
       {/* Info del ítem */}
       <div style={{ display: "flex", gap: "15px", marginBottom: "15px" }}>
         <img
-          src={`http://localhost:4000${item.imageurl}`}
+          src={`https://v14m7300-4000.brs.devtunnels.ms${item.imageurl}`}
           alt={item.name}
           style={{ width: "100px", borderRadius: "8px" }}
         />

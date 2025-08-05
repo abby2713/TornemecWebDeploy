@@ -62,7 +62,7 @@ export default function MachineDetailModal({ machineId, onClose }) {
                 const { status, data } = await getMachineDetail(machineId);
                 if (status === 200) {
                     const machine = Array.isArray(data) ? data[0] : data; // Manejo si la API devuelve un array
-                    const images = machine.images ? machine.images.map(img => `http://localhost:4000${img}`) : [];
+                    const images = machine.images ? machine.images.map(img => `https://v14m7300-4000.brs.devtunnels.ms${img}`) : [];
                     setFormData({
                         name: machine.name || "",
                         brand: machine.brand || "",
